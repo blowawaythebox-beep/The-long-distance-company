@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Long Distance Company</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="The Long Distance Company, basée à Lyon : accompagnement de projets longue distance, tests de matériel outdoor pour les marques et coaching de chefs d'entreprise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- Pictos (trait 1.5px) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-mountain" viewBox="0 0 24 24"><path d="M2 20 9 7.5l3.6 6.2L15.5 9 22 20Z"/><path d="m7.4 10.3 1.6 1.2 1.3-1"/></symbol>
+  <symbol id="i-tent" viewBox="0 0 24 24"><path d="M2.5 20 12 4.5 21.5 20Z"/><path d="M12 4.5V20"/><path d="m8.8 20 3.2-6 3.2 6"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.4-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.6 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.2"/></symbol>
+  <symbol id="i-pack" viewBox="0 0 24 24"><path d="M6.5 9a5.5 5.5 0 0 1 11 0v11.5h-11Z"/><path d="M9.5 3.5h5"/><path d="M6.5 13.5h11"/><path d="M10 16.5h4"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M2.5 16.5c3.5 1.6 15.5 1.6 19 0"/><path d="M6 16c0-4.6 2.7-8.5 6-8.5s6 3.9 6 8.5"/><path d="M7 12.6c3 .8 7 .8 10 0"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V3.5"/><path d="M6 4.5h11.5l-2.4 4 2.4 4H6"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24"><path d="M3.5 11 12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 10 10"><path d="M1 9 9 1M3 1h6v6" fill="none" stroke="currentColor" stroke-width="1.2"/></symbol>
+</svg>
+
+<!-- Curseur -->
+<div class="cursor" aria-hidden="true">
+  <div class="cursor__ring"><span class="cursor__label">Voir</span></div>
+  <div class="cursor__dot"></div>
+</div>
+
+<!-- Écran d'entrée -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__panel loader__panel--top"></div>
+  <div class="loader__panel loader__panel--bottom"></div>
+  <div class="loader__top caption">
+    <span>The Long Distance Company</span>
+    <span>Lyon — 45.7640° N / 4.8357° E</span>
+  </div>
+  <div class="loader__mid">
+    <div class="loader__count"><span class="js-count">000</span><small>KM</small></div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+  <div class="loader__bottom caption">
+    <div class="loader__words"><span>Exploration</span><span>Terrain</span><span>Outdoor</span></div>
+    <span>Chargement du tracé</span>
+  </div>
+</div>
+
+<!-- Navigation -->
+<header class="nav" id="nav">
+  <a href="index.html" class="wordmark" aria-label="The Long Distance Company, accueil">
+    <span class="wm-full">The Long Distance Co.</span><span class="wm-short">TLDC</span>
+  </a>
+  <nav class="nav__links" aria-label="Navigation principale">
+    <a class="nav__link" href="index.html" aria-current="page">Accueil</a>
+    <a class="nav__link" href="a-propos.html">À propos</a>
+    <a class="nav__link" href="services.html">Services</a>
+    <a class="nav__link" href="contact.html">Contact</a>
+    <a class="btn magnetic" href="contact.html">
+      <span class="btn__label"><span>Partir avec nous</span><span>Partir avec nous</span></span>
+      <svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </a>
+    <button class="nav__toggle" id="menuToggle" aria-expanded="false" aria-controls="menu">
+      <span class="js-menu-label">Menu</span>
+      <span class="nav__toggle-lines" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </nav>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <ul class="menu__list">
+    <li class="menu__item"><span class="caption">01</span><a class="menu__link" href="index.html">Accueil</a></li>
+    <li class="menu__item"><span class="caption">02</span><a class="menu__link" href="a-propos.html">À propos</a></li>
+    <li class="menu__item"><span class="caption">03</span><a class="menu__link" href="services.html">Services</a></li>
+    <li class="menu__item"><span class="caption">04</span><a class="menu__link" href="contact.html">Contact</a></li>
+  </ul>
+  <div class="menu__foot caption">
+    <span>Lyon, France</span>
+    <span>email@exemple.fr</span>
+  </div>
+</div>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top" data-band="dark">
+    <div class="hero__media">
+      <img src="assets/img/hero-summit.jpg" alt="Randonneur debout sur une crête au coucher du soleil, chaînes de montagnes dans la brume" fetchpriority="high">
+    </div>
+    <div class="hero__shade"></div>
+    <div class="hero__veil"></div>
+
+    <div class="scroll-cue-wrap caption">
+      <span class="scroll-cue" aria-hidden="true"><i></i></span>
+      <span class="js-hero-fade">Défiler</span>
+    </div>
+    <div class="hero__side caption">
+      <span class="badge js-hero-fade" aria-hidden="true"><svg><use href="#i-mountain"/></svg></span>
+      <span class="js-hero-fade">Alt. variable</span>
+    </div>
+
+    <div class="hero__inner">
+      <div></div>
+      <div class="hero__meta">
+        <p class="hero__intro">
+          <span class="line"><span>Exploration &amp; outdoor.</span></span>
+          <span class="line"><span>On prépare les grandes traversées,</span></span>
+          <span class="line"><span>on éprouve le matériel,</span></span>
+          <span class="line"><span>on emmène les dirigeants dehors.</span></span>
+        </p>
+        <div class="hero__caption caption">
+          <span class="line"><span>The Long Distance Company</span></span>
+          <span class="line"><span>Basée à Lyon — Rhône-Alpes</span></span>
+          <span class="line"><span>Terrain : partout où ça monte</span></span>
+        </div>
+      </div>
+      <h1 class="hero__title js-split-chars js-fit" aria-label="Long Distance">Long Distance</h1>
+    </div>
+  </section>
+
+  <!-- ============ MANIFESTE ============ -->
+  <section class="band band-light manifesto" id="manifeste" data-band="light">
+    <div class="manifesto__head">
+      <span class="eyebrow">Manifeste</span>
+      <div class="manifesto__coords caption">
+        <span>Point de départ : Lyon</span>
+        <span>45.7640° N / 4.8357° E</span>
+      </div>
+    </div>
+
+    <p class="manifesto__text js-words">
+      Les projets qui comptent se mesurent en <span class="hl">kilomètres</span>, en <span class="hl">dénivelé</span> et en jours sans réseau. Nous aidons ceux qui partent loin à <span class="hl">arriver au bout</span>.
+    </p>
+
+    <div class="manifesto__route" aria-hidden="true">
+      <svg class="route-svg" viewBox="0 0 1440 300">
+        <g class="topo">
+          <path d="M-20 250 C 160 200, 300 270, 480 220 S 820 140, 980 190 S 1300 260, 1460 200"/>
+          <path d="M-20 270 C 180 230, 320 290, 500 250 S 830 170, 990 220 S 1300 285, 1460 230"/>
+          <path d="M-20 228 C 150 175, 290 245, 470 195 S 815 115, 975 165 S 1300 235, 1460 175"/>
+        </g>
+        <path class="route-base" d="M40 230 C 180 230, 230 120, 360 130 S 520 250, 660 210 S 820 60, 960 80 S 1120 200, 1240 150 S 1360 70, 1400 60"/>
+        <path class="route-line" id="routeLine" d="M40 230 C 180 230, 230 120, 360 130 S 520 250, 660 210 S 820 60, 960 80 S 1120 200, 1240 150 S 1360 70, 1400 60"/>
+        <g class="wp"><circle class="dot" cx="40" cy="230" r="5"/><text x="40" y="262">Départ</text></g>
+        <g class="wp"><circle cx="360" cy="130" r="6"/><text x="330" y="108">Col</text></g>
+        <g class="wp"><circle cx="660" cy="210" r="6"/><text x="630" y="244">Bivouac</text></g>
+        <g class="wp"><circle cx="960" cy="80" r="6"/><text x="930" y="58">Crête</text></g>
+        <g class="wp"><circle class="dot" cx="1400" cy="60" r="5"/><text x="1310" y="38">Arrivée</text></g>
+        <circle class="route-walker" id="routeWalker" cx="40" cy="230" r="8"/>
+      </svg>
+    </div>
+
+    <div class="manifesto__grid">
+      <figure class="manifesto__fig">
+        <div class="manifesto__photo" data-cursor="view">
+          <img class="js-parallax-img" src="assets/img/rocky-hiker.jpg" alt="Randonneur avec un grand sac à dos et des bâtons sur un sentier rocailleux" loading="lazy">
+        </div>
+        <figcaption class="manifesto__photo-caption caption"><span>Sur le sentier</span><span>Préparation longue distance</span></figcaption>
+      </figure>
+      <div class="manifesto__body">
+        <div class="manifesto__badges">
+          <span class="badge" aria-hidden="true"><svg><use href="#i-compass"/></svg></span>
+          <span class="badge" aria-hidden="true"><svg><use href="#i-tent"/></svg></span>
+          <span class="badge" aria-hidden="true"><svg><use href="#i-pack"/></svg></span>
+        </div>
+        <p class="js-reveal">The Long Distance Company est née d'une conviction simple : une traversée de plusieurs semaines, un test de sac sur mille kilomètres et la conduite d'une entreprise demandent les mêmes qualités. De la préparation, de l'endurance et de la lucidité quand la fatigue arrive.</p>
+        <p class="js-reveal">Depuis Lyon, à deux heures des grands massifs, nous accompagnons des aventuriers, des marques outdoor et des dirigeants. Toujours sur le terrain, toujours avec un plan.</p>
+        <p class="js-reveal"><a class="link-serif" href="a-propos.html">Lire notre histoire</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="band band-dark services" id="services" data-band="dark">
+    <div class="services__intro">
+      <span class="eyebrow">Services</span>
+      <h2 class="services__title display js-split-lines">Trois terrains<br>de jeu</h2>
+      <p class="services__lead js-reveal">Trois métiers, une même méthode : partir préparé, observer sur le terrain, revenir avec du concret.</p>
+    </div>
+
+    <div class="hscroll">
+      <div class="hscroll__track">
+
+        <article class="svc">
+          <span class="svc__num caption">Service — 1/3</span>
+          <div class="svc__text">
+            <div class="svc__tag"><span class="badge" aria-hidden="true"><svg><use href="#i-flag"/></svg></span><span class="eyebrow">Accompagnement</span></div>
+            <h3 class="svc__name display">Longue<br>distance</h3>
+            <p class="svc__desc">Traversée, trek au long cours, ultra ou expédition : on construit le projet avec vous, de l'itinéraire à la logistique, de la préparation physique au mental des jours difficiles.</p>
+            <ul class="svc__list">
+              <li><span>Itinéraire &amp; repérage</span><span>→</span></li>
+              <li><span>Logistique &amp; ravitaillement</span><span>→</span></li>
+              <li><span>Préparation &amp; suivi</span><span>→</span></li>
+            </ul>
+          </div>
+          <div class="svc__media">
+            <div class="tilt tilt--a" data-rot="-6" data-cursor="view"><img src="assets/img/ridge-trail.jpg" alt="Sentier de crête entre névés et vallées vertes" loading="lazy"></div>
+            <div class="tilt tilt--b" data-rot="8" data-cursor="view"><img src="assets/img/tent-sunset.jpg" alt="Tente orange plantée en montagne au coucher du soleil" loading="lazy"></div>
+          </div>
+        </article>
+
+        <article class="svc">
+          <span class="svc__num caption">Service — 2/3</span>
+          <div class="svc__text">
+            <div class="svc__tag"><span class="badge" aria-hidden="true"><svg><use href="#i-pack"/></svg></span><span class="eyebrow">Pour les marques</span></div>
+            <h3 class="svc__name display">Test de<br>matériel</h3>
+            <p class="svc__desc">Sacs, chaussures, textile, bivouac : on emmène votre matériel là où il sera vraiment utilisé et on vous rend des retours précis, exploitables par vos équipes produit et marketing.</p>
+            <ul class="svc__list">
+              <li><span>Protocoles terrain</span><span>→</span></li>
+              <li><span>Rapports d'usure &amp; d'usage</span><span>→</span></li>
+              <li><span>Photos &amp; contenus</span><span>→</span></li>
+            </ul>
+          </div>
+          <div class="svc__media">
+            <div class="tilt tilt--a" data-rot="5" data-cursor="view"><img src="assets/img/pack-cliff.jpg" alt="Sac à dos posé sur un rocher face au soleil" loading="lazy"></div>
+            <div class="tilt tilt--b" data-rot="-9" data-cursor="view"><img src="assets/img/packs-tree.jpg" alt="Plusieurs sacs de randonnée appuyés contre un arbre en forêt" loading="lazy"></div>
+          </div>
+        </article>
+
+        <article class="svc">
+          <span class="svc__num caption">Service — 3/3</span>
+          <div class="svc__text">
+            <div class="svc__tag"><span class="badge" aria-hidden="true"><svg><use href="#i-compass"/></svg></span><span class="eyebrow">Pour les dirigeants</span></div>
+            <h3 class="svc__name display">Coaching<br>dirigeant</h3>
+            <p class="svc__desc">Prendre de la hauteur au sens propre. Des séances et des immersions en extérieur pour travailler la décision, l'endurance et le cap, loin de l'open space.</p>
+            <ul class="svc__list">
+              <li><span>Séances individuelles</span><span>→</span></li>
+              <li><span>Immersions en montagne</span><span>→</span></li>
+              <li><span>Comités de direction</span><span>→</span></li>
+            </ul>
+          </div>
+          <div class="svc__media">
+            <div class="tilt tilt--a" data-rot="-4" data-cursor="view"><img src="assets/img/beanie-cliff.jpg" alt="Personne au bonnet rouge, bras ouverts face aux montagnes" loading="lazy"></div>
+            <div class="tilt tilt--b" data-rot="11" data-cursor="view"><img src="assets/img/compass.jpg" alt="Boussole en laiton posée sur une carte" loading="lazy"></div>
+          </div>
+        </article>
+
+      </div>
+      <div class="hscroll__progress caption" aria-hidden="true">
+        <span>Glisser</span>
+        <span class="hscroll__bar"><i></i></span>
+        <a href="services.html" class="btn">
+          <span class="btn__label"><span>Tous les services</span><span>Tous les services</span></span>
+          <svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPANSION ============ -->
+  <section class="expand" id="pas" data-band="dark">
+    <div class="expand__frame">
+      <img src="assets/img/desert-walk.jpg" alt="Une file de marcheurs sur la crête d'une dune au coucher du soleil" loading="lazy">
+    </div>
+    <div class="expand__labels caption">
+      <span>Endurance</span>
+      <span>Le principe de base</span>
+    </div>
+    <h2 class="expand__title display" aria-label="Un pas, puis un autre">
+      <span class="row js-split-chars">Un pas,</span>
+      <span class="row row--r js-split-chars">puis un autre</span>
+    </h2>
+  </section>
+
+  <!-- ============ CARNET DE ROUTE ============ -->
+  <section class="band band-dark logbook" id="carnet" data-band="dark">
+    <div class="logbook__head">
+      <span class="eyebrow">Carnet de route</span>
+      <h2 class="logbook__title display js-split-chars js-fit">Carnet de route</h2>
+      <p class="logbook__lead js-reveal">Des sentiers, des bivouacs, du matériel mis à l'épreuve. Quelques pages du carnet, en attendant les vôtres.</p>
+    </div>
+
+    <div class="logbook__board">
+      <figure class="card card--1" data-rot="-8" data-speed="0.9" style="margin:0"><div class="card-inner"><div class="card__img" data-cursor="view"><img src="assets/img/tent-lake.jpg" alt="Petite tente au bord d'un lac de montagne" loading="lazy"></div><figcaption class="card__cap"><span>Bivouac</span><span>Bord de lac</span></figcaption></div></figure>
+      <figure class="card card--2 card--land" data-rot="6" data-speed="1.3" style="margin:0"><div class="card-inner"><div class="card__img" data-cursor="view"><img src="assets/img/canyon-walker.jpg" alt="Marcheur au fond d'un canyon de grès rouge" loading="lazy"></div><figcaption class="card__cap"><span>Canyon</span><span>Chaleur &amp; eau</span></figcaption></div></figure>
+      <figure class="card card--3 card--land" data-rot="-3" data-speed="0.7" style="margin:0"><div class="card-inner"><div class="card__img" data-cursor="view"><img src="assets/img/snow-peaks.jpg" alt="Sommets enneigés aux arêtes découpées" loading="lazy"></div><figcaption class="card__cap"><span>Haute montagne</span><span>Neige &amp; rocher</span></figcaption></div></figure>
+      <figure class="card card--4" data-rot="11" data-speed="1.15" style="margin:0"><div class="card-inner"><div class="card__img" data-cursor="view"><img src="assets/img/runner.jpg" alt="Coureur de trail sur un sentier en balcon face à un volcan enneigé" loading="lazy"></div><figcaption class="card__cap"><span>Trail</span><span>Sentier en balcon</span></figcaption></div></figure>
+      <figure class="card card--5 card--land" data-rot="4" data-speed="1.2" style="margin:0"><div class="card-inner"><div class="card__img" data-cursor="view"><img src="assets/img/grass-hiker.jpg" alt="Silhouette de marcheur sur une immense prairie" loading="lazy"></div><figcaption class="card__cap"><span>Plateau</span><span>Longue étape</span></figcaption></div></figure>
+      <figure class="card card--6" data-rot="-10" data-speed="0.85" style="margin:0"><div class="card-inner"><div class="card__img" data-cursor="view"><img src="assets/img/forest-path.jpg" alt="Chemin forestier dans la brume d'automne" loading="lazy"></div><figcaption class="card__cap"><span>Forêt</span><span>Départ à l'aube</span></figcaption></div></figure>
+      <figure class="card card--7 card--land" data-rot="7" data-speed="1.05" style="margin:0"><div class="card-inner"><div class="card__img" data-cursor="view"><img src="assets/img/ridges.jpg" alt="Lignes de crêtes successives dans une lumière orangée" loading="lazy"></div><figcaption class="card__cap"><span>Crêtes</span><span>Fin de journée</span></figcaption></div></figure>
+
+      <span class="badge logbook__badge logbook__badge--1" aria-hidden="true"><svg><use href="#i-hat"/></svg></span>
+      <span class="badge logbook__badge logbook__badge--2" aria-hidden="true"><svg><use href="#i-pin"/></svg></span>
+      <span class="badge logbook__badge logbook__badge--3" aria-hidden="true"><svg><use href="#i-house"/></svg></span>
+
+      <div class="logbook__note caption">
+        <span>Photos d'illustration</span>
+        <span>Carnet en cours d'écriture</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BANDEAU ============ -->
+  <section class="band band-sage marquee" aria-label="Nos terrains" data-band="light">
+    <div class="marquee__row marquee__row--a">
+      <div class="marquee__item">Traversées<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 4 36 36M36 4 4 36"/></svg>Expéditions<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 4 36 36M36 4 4 36"/></svg>Tests matériel<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 4 36 36M36 4 4 36"/></svg>Coaching<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 4 36 36M36 4 4 36"/></svg></div>
+    </div>
+    <div class="marquee__row marquee__row--b" aria-hidden="true">
+      <div class="marquee__item">Trek<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/></svg>Ultra-trail<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/></svg>Bivouac<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/></svg>Haute route<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/></svg>Leadership<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/></svg></div>
+    </div>
+  </section>
+
+  <!-- ============ MÉTHODE ============ -->
+  <section class="band band-light method" id="methode" data-band="light">
+    <div class="method__head">
+      <span class="eyebrow">Notre méthode</span>
+      <h2 class="method__title display js-split-lines">Du premier café<br>au dernier col</h2>
+      <p class="method__lead js-reveal">Que vous prépariez une traversée, le lancement d'un produit ou une saison difficile pour votre entreprise, on avance dans le même ordre.</p>
+    </div>
+    <ol class="steps">
+      <li class="step js-step">
+        <span class="step__num">Étape 1</span>
+        <h3 class="step__name display">L'échange</h3>
+        <p class="step__desc">On écoute le projet, l'objectif réel et les contraintes : temps, budget, niveau, enjeux.</p>
+        <span class="step__icon"><span class="badge" aria-hidden="true"><svg><use href="#i-house"/></svg></span></span>
+      </li>
+      <li class="step js-step">
+        <span class="step__num">Étape 2</span>
+        <h3 class="step__name display">Le repérage</h3>
+        <p class="step__desc">Carte, terrain, saison, matériel : on étudie le parcours et on identifie les points critiques.</p>
+        <span class="step__icon"><span class="badge" aria-hidden="true"><svg><use href="#i-compass"/></svg></span></span>
+      </li>
+      <li class="step js-step">
+        <span class="step__num">Étape 3</span>
+        <h3 class="step__name display">La préparation</h3>
+        <p class="step__desc">Plan d'entraînement, logistique, protocoles de test ou programme de coaching, calés sur votre calendrier.</p>
+        <span class="step__icon"><span class="badge" aria-hidden="true"><svg><use href="#i-pack"/></svg></span></span>
+      </li>
+      <li class="step js-step">
+        <span class="step__num">Étape 4</span>
+        <h3 class="step__name display">Le départ</h3>
+        <p class="step__desc">On reste joignables sur le terrain, on ajuste en route et on fait le bilan au retour.</p>
+        <span class="step__icon"><span class="badge" aria-hidden="true"><svg><use href="#i-flag"/></svg></span></span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="band band-dark cta" id="contact" data-band="dark">
+    <div class="cta__media"><img class="js-cta-img" src="assets/img/snow-peaks.jpg" alt="" loading="lazy"></div>
+    <div class="cta__content">
+      <span class="eyebrow">Contact</span>
+      <h2 class="cta__title display js-split-chars js-fit" aria-label="On part ?">On part ?</h2>
+      <div class="cta__grid">
+        <p class="cta__lead js-reveal">Un projet de traversée, un produit à éprouver, une équipe à emmener plus haut ? Racontez-nous où vous voulez aller.</p>
+        <div class="cta__info js-reveal">
+          <div class="cta__info-row">
+            <span class="caption">Email</span>
+            <span class="value js-copy-src" id="contactEmail">email@exemple.fr</span>
+            <button class="copy" type="button" data-copy="#contactEmail">Copier l'adresse</button>
+          </div>
+          <div class="cta__info-row">
+            <span class="caption">Téléphone</span>
+            <span class="value">+33 (0)0 00 00 00 00</span>
+          </div>
+          <div class="cta__info-row">
+            <span class="caption">Adresse</span>
+            <span class="value">Lyon, France</span>
+          </div>
+        </div>
+        <div class="cta__actions js-reveal">
+          <a class="btn magnetic" href="contact.html">
+            <span class="btn__label"><span>Nous écrire</span><span>Nous écrire</span></span>
+            <svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn magnetic" href="services.html">
+            <span class="btn__label"><span>Voir les services</span><span>Voir les services</span></span>
+            <svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="band band-dark footer" data-band="dark">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <a href="index.html" class="wordmark">The Long Distance Company</a>
+      <p class="small">Exploration &amp; outdoor. Accompagnement longue distance, tests de matériel et coaching de dirigeants.</p>
+    </div>
+    <div class="footer__col">
+      <span class="caption">Pages</span>
+      <a href="index.html">Accueil</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer__col">
+      <span class="caption">Contact</span>
+      <span>email@exemple.fr</span>
+      <span>+33 (0)0 00 00 00 00</span>
+      <span>Lyon, France</span>
+    </div>
+    <div class="footer__caption caption">
+      <span>The Long Distance Company</span>
+      <span>Lyon — Rhône-Alpes</span>
+      <span>45.7640° N / 4.8357° E</span>
+    </div>
+  </div>
+  <div class="footer__bottom caption">
+    <span>© 2026 The Long Distance Company</span>
+    <span>Photos : <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> (illustrations provisoires)</span>
+    <a href="#top" class="to-top js-to-top">Retour en haut ↑</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
